@@ -1,8 +1,8 @@
 {
   "projects": {
-    "sm-api": "https://github.com/conatel-i-d/sm-api",
-    "sm-dashboard": "https://github.com/conatel-i-d/sm-dashboard",
-    "sm-infrastructure": "https://github.com/conatel-i-d/sm-infrastructure",
-    "sm-playbooks": "https://github.com/conatel-i-d/sm-playbooks"
+    "sm-api": "git@github.com:conatel-i-d/sm-api",
+    "sm-dashboard": "git@github.com:conatel-i-d/sm-dashboard",
+    "sm-infrastructure": "git@github.com:conatel-i-d/sm-infrastructure.git",
+    "sm-playbooks": "git@github.com:conatel-i-d/sm-playbooks"
   }
 }
