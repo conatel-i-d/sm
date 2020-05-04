@@ -107,6 +107,9 @@ api_database_name: # nombre de la db para la api
 
 # Ubicación de python en tu entono de desarrollo
 ansible_python_interpreter: /usr/bin/env python3.7
+#ldap
+ldap_user: # nombre de usuario para el ldap
+ldap_password: # password para el ldap
 ```
 
 Si quisiéramos volver a editar los secretos, estando parado en `sm-infraestructura` ejecutar `make secret`
