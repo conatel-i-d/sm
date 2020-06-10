@@ -65,13 +65,13 @@ project_data_dir: '{{ project_folder }}/sm-playbooks' # se puede usar por defect
 api_folder: '{{ project_folder  }}/sm-api' # se puede usar por defecto
 dashboard_folder: '{{ project_folder }}/sm-dashboard' # se puede usar por defecto
 public_domain: sm.conatest.click
-aws_access_key: AKIA3XGTWNW522X6S6BD
-aws_secret_key: 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
+aws_access_key: 
+aws_secret_key: 
 aws_region: us-east-1
 key_name: '{{ project_name }}_key'
 email_address: scattonec@saltogrande.org
-smtp_username: AKIAZSXBLUFHZKO34HPV
-smtp_password: BKMAWldCk93kDkCuqkDZZpsgD30IokLqRBqabbuObuYe
+smtp_username: 
+smtp_password: 
 smtp_server: email-smtp.us-east-1.amazonaws.com
 smtp_port: 25
 smtp_tls: Yes
