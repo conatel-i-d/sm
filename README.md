@@ -53,9 +53,10 @@ make create_secrets
 este comando crea y abre el archivo para colocar nuestras propias variables, las variables con las que
 debe contar ese archivo son las siguientes:
 
-```vim
+```yml
 # Main vars
-project_folder: '/ruta/a/tu/proyecto/sm'
+project_name: sm
+project_folder: '~/Documents/Projects/sm'
 build_folder: '{{ project_folder }}/sm-infrastructure/lib' # se puede usar por defecto
 output_folder: '{{ build_folder }}/ouputs' # se puede usar por defecto
 certificates_folder: '{{ build_folder }}/certificates' # se puede usar por defecto
@@ -63,17 +64,14 @@ docker_compose_dir: '{{ build_folder }}/docker' # se puede usar por defecto
 project_data_dir: '{{ project_folder }}/sm-playbooks' # se puede usar por defecto
 api_folder: '{{ project_folder  }}/sm-api' # se puede usar por defecto
 dashboard_folder: '{{ project_folder }}/sm-dashboard' # se puede usar por defecto
-project_name: sm # se puede usar por defecto
-public_domain: sm.conatest.click # esta variable cambia entre entornos de dev y prod, ademas en dev se debe aplicar una regla
-`/etc/hosts` para que vaya a localhost
-aws_access_key: #  clave de acceso de aws - usado para pruebas
-aws_secret_key: #  clave secreta de aws - usado para pruebas
-aws_region: us-east-1 # region aws - usado para pruebas
-key_name: '{{ project_name }}_key' # creo esta sin uso - TODO: verificar
-# Configuracion SMTP para el AWX
-email_address: gmonne@conatel.com.uy
-smtp_username: # usuario smtp para el awx
-smtp_password: # password smtp para el awx
+public_domain: sm.conatest.click
+aws_access_key: AKIA3XGTWNW522X6S6BD
+aws_secret_key: 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
+aws_region: us-east-1
+key_name: '{{ project_name }}_key'
+email_address: scattonec@saltogrande.org
+smtp_username: AKIAZSXBLUFHZKO34HPV
+smtp_password: BKMAWldCk93kDkCuqkDZZpsgD30IokLqRBqabbuObuYe
 smtp_server: email-smtp.us-east-1.amazonaws.com
 smtp_port: 25
 smtp_tls: Yes
@@ -81,36 +79,53 @@ smtp_from: sm@mail.conatel.cloud
 smtp_from_display_name: Conatel Switch Manager
 # AWX Vars
 awx_version: 7.0.0
-awx_database_name: # awx db name
-awx_admin_username: # awx db user name
-awx_admin_password: # awx db password
-postgres_data_dir: '{{ docker_compose_dir }}/pgdocker' # se puede usar por defecto
-secret_key: # TODO: verificar para que se usa
+awx_database_name: awx
+awx_admin_username: awx
+awx_admin_password: awxpassword
+secret_key: C0n4t3lC0n4t3l
 # PostgreSQL
-pg_admin_username: #db admin user
-pg_admin_password: #db password user
-pg_port: 5432 # db port
-pg_hostname: # db host
+pg_admin_username: postgres
+pg_admin_password: postgrespassword
+pg_port: 5432
+pg_hostname: postgres
 # Keycloak
 keycloak_version: 7.0.0
-keycloak_admin_username: # keycloak user name
-keycloak_admin_password: # keycloak password
-keycloak_database_name: # keycloak db name
-keycloak_realm: sm # keycloak realm para la solución - se puede usar por defecto
-# Cisco Prime
-cisco_prime_user: # usuario del cisco prime
-cisco_prime_password: # password del cisco prime
+keycloak_admin_username: keycloak
+keycloak_admin_password: keycloakpassword
+keycloak_database_name: keycloak
+keycloak_realm: sm
 # API
-api_admin_username: # nombre del usuario administrador de la api
-api_admin_password: # password para el usuario administrador de la api
-api_database_name: # nombre de la db para la api
-
-# Ubicación de python en tu entono de desarrollo
-ansible_python_interpreter: /usr/bin/env python3.7
+api_admin_username: admin
+api_admin_password: adminpassword
+api_database_name: api
+# Frontend
+ansible_python_interpreter: /home/ibarreto/.pyenv/shims/python
+# Cisco Prime
+cisco_prime_base_url: https://172.16.1.217
+cisco_prime_user: ignaciob
+cisco_prime_password: 2020Conatel
+prime_switches_ssh_user: swmanager
+prime_switches_ssh_pass: "@tencioN20"
 #ldap
-ldap_user: # nombre de usuario para el ldap
-ldap_password: # password para el ldap
+ldap_user: serviciosco
+ldap_password: CoSoft20
+# Dockerhub credentials
+dockerhub_user: conatelid
+dockerhub_password: C0n4t3lC0n4t3l
+#switch publico
+sw_public_ip: 200.58.153.100
+sw_public_os: ios
+sw_public_ssh_user: ialmandos
+sw_public_ssh_pass: ialmandos
+sw_public_ssh_port: 2222
+#switch privado
+sw_private_ip: 172.16.1.55
+sw_private_os: ios
+sw_private_ssh_user: netconf_username
+sw_private_ssh_pass: "C0n4t3l."
+sw_private_ssh_port: 2222
 ```
+
 
 Si quisiéramos volver a editar los secretos, estando parado en `sm-infraestructura` ejecutar `make secret`
 
