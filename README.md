@@ -101,6 +101,7 @@ api_database_name: api
 # Frontend
 ansible_python_interpreter: /home/ibarreto/.pyenv/shims/python
 # Cisco Prime
+cisco_prime_is_desable: True
 cisco_prime_base_url: https://172.16.1.217
 cisco_prime_user: ignaciob
 cisco_prime_password: 2020Conatel
