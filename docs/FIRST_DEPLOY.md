@@ -17,7 +17,7 @@ El proyecto cuenta inicialmente con tres estructuras principales,
 
 Una vez que tenemos la esctuctura de repositorios clonada es necesario obtener o crear los siguentes archivos:
 
-Dentro de la carpeta `sm-infraestructure` hay que crear un archivo password idealmente que sea una llave privada.
+Dentro de la carpeta `sm-infraestructure` hay que crear un llave privada RSA256 con nombre `password`, en adelante esta llave sera utilizada para cifrar las variables de entorno por lo tanto no se encuentra en ningun otro lado que el servidor hasta que no se respalde.
 Esta llave nos permite crear por medio de `ansible-vault` un archivo con las variables secretas que necesitamos y lo cifra.
 Una vez que tenemos el archivo y estando parado dentro de `sm-infraestructure`, ejecutamos
 
@@ -25,19 +25,19 @@ Una vez que tenemos el archivo y estando parado dentro de `sm-infraestructure`, 
 make create_secrets
 ```
 
-para crear ese archivo secret.yml, este comando ademas de crear ya abre el archivo para colocar nuestras propias variables, las variables que se deben configurar para este proyecto son las siguientes:
+para crear ese archivo secret.yml, este comando ademas de crear, abre el archivo para colocar las variables customizadas para este deploy del proyecto, las variables que se deben configurar para este proyecto son las siguientes:
 
 ```yml
 # Main vars
 project_name: sm
-project_folder: '~/Documents/Projects/sm'
-build_folder: '{{ project_folder }}/sm-infrastructure/lib' # se puede usar por defecto
-output_folder: '{{ build_folder }}/ouputs' # se puede usar por defecto
-certificates_folder: '{{ build_folder }}/certificates' # se puede usar por defecto
-docker_compose_dir: '{{ build_folder }}/docker' # se puede usar por defecto
-project_data_dir: '{{ project_folder }}/sm-playbooks' # se puede usar por defecto
-api_folder: '{{ project_folder  }}/sm-api' # se puede usar por defecto
-dashboard_folder: '{{ project_folder }}/sm-dashboard' # se puede usar por defecto
+project_folder: '/route/to/your/local/project' # debe configurarse para la instalacion particular y dbe coincidir con la ruta a la carpeta raiz del proyecto
+build_folder: '{{ project_folder }}/sm-infrastructure/lib' # se recomienda utilizar el por defecto
+output_folder: '{{ build_folder }}/ouputs' # se recomienda utilizar el por defecto
+certificates_folder: '{{ build_folder }}/certificates' # se recomienda utilizar el por defecto
+docker_compose_dir: '{{ build_folder }}/docker' # se recomienda utilizar el por defecto
+project_data_dir: '{{ project_folder }}/sm-playbooks' # se recomienda utilizar el por defecto
+api_folder: '{{ project_folder  }}/sm-api' # se recomienda utilizar el por defecto
+dashboard_folder: '{{ project_folder }}/sm-dashboard' # se recomienda utilizar el por defecto
 public_domain: public.domain
 aws_access_key: #solo para dev, cuando se usaba route53
 aws_secret_key: #solo para dev, cuando se usaba route53
@@ -129,7 +129,7 @@ Para levantar producción es necesario ejecutar un comando de forma independient
 
 Luego debe pegar sus certificados crt y key en los directorios que especifico en la variable `certificates_folder` y con el nombre que especifico en `public_domain` mas la extencion del archivo dependiendo si es el `.crt` o `.key`, una vez prontos los certificados se procede a levantar el resto de los servicios
 
-**PROD-SHORTCUT-PART-1:** `make db_up && sleep 30 && make prod && make build-tower-cli && make awx-send-prod`
+**PROD-SHORTCUT-PART-2:** `make db_up && sleep 30 && make prod && make build-tower-cli && make awx-send-prod`
 
 **NOTA:** es importante respetar el orden en que se ejecutan los comandos porque cada uno depende de los anteriores.
 Por ejemplo la db se debe conectar de la docker network que se crea en setup.

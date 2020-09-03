@@ -1,12 +1,17 @@
-# CTMSG - Switch Manager
+# CTMSG - Switch Manager <!-- omit in toc -->
 
-- [CTMSG - Switch Manager](#ctmsg---switch-manager)
-  - [Descripción general](#descripción-general)
-  - [Prerequisitos](#prerequisitos)
-  - [Inicializar proyecto](#inicializar-proyecto)
-  - [Estructura del repositorio (directorio) principal](#estructura-del-repositorio-directorio-principal)
-  - [Descripción de la composición de hardware/contenedores y flujos de comunicación](#descripción-de-la-composición-de-hardwarecontenedores-y-flujos-de-comunicación)
-    - [Descripción de los flujos principales](#descripción-de-los-flujos-principales)
+- [Descripción general](#descripción-general)
+- [Prerequisitos](#prerequisitos)
+- [Inicializar proyecto](#inicializar-proyecto)
+- [Estructura del repositorio (directorio) principal](#estructura-del-repositorio-directorio-principal)
+- [Descripción de la composición de hardware/contenedores y flujos de comunicación](#descripción-de-la-composición-de-hardwarecontenedores-y-flujos-de-comunicación)
+  - [Descripción de los flujos principales](#descripción-de-los-flujos-principales)
+
+- [Implementación desde 0](docs/FIRST_DEPLOY.md)
+- [Crear respaldos](docs/BACKUPS.md)
+- [Mantenimiento](docs/MAINTENANCE.md)
+- [Diagnostico de problemas](docs/TRUBLESHOOTING_TIPS.md)
+- [Manual de usuario](docs/USER_MANUAL.md)
 
 ## Descripción general
 
@@ -34,6 +39,7 @@ El servidor debe contar con
 - [Node >12 y NPM](https://www.digitalocean.com/community/tutorials/como-instalar-node-js-en-ubuntu-18-04-es)
 - [python2 o python3 con docker instalado](https://docs.ansible.com/ansible/latest/scenario_guides/guide_docker.html)
 - [ansible >2.9](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Inicializar proyecto
 
