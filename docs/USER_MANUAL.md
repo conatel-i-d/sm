@@ -32,11 +32,11 @@ La busqueda por mac es una de las funcionalidades principales del proyecto y lo 
 
 Una vez que ingresamos a la busqueda por mac llegaremos a la siguiente pagina
 
-![](images/UserManual/9-SearchMacWizard.png)
+![Search by mac](images/UserManual/9-SearchMacWizard.png)
 
 y a continuación se muestra como seria el flujo de busqueda de una MAC, hasta llegar a la interface y resetearla 
 
-![Search by mac](images/UserManual/5-searchByMacBuildings.png)
+![Search by mac](images/UserManual/5-searchByMacBuilding.png)
 
 ![Search by mac](images/UserManual/6-searchByMacSwitchOBuilding.png)
 
