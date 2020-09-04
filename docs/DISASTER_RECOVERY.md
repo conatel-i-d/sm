@@ -2,7 +2,7 @@
 
 Antes de comenzar con esta parte hay que asegurarse que el servidor cuenta con los requisitos y ademas el proyecto esta inicializado, tal como se describe en el [README](../README.md).
 
-Una vez en este estado, lo siguiente es restaurar todos los archivos de configuracion de variables de entorno, se debe colocar dentro de la carpeta `sm-infraestructure`
+Una vez en este estado, lo siguiente es restaurar todos los archivos de configuracion de variables de entorno, se debe colocar dentro de la carpeta `sm-infrastructure`
 los archivos `password` y `secret.yml`
 
 Luego se iniziaiza el deploy ejecutando 

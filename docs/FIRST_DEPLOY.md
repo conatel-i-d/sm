@@ -17,9 +17,9 @@ El proyecto cuenta inicialmente con tres estructuras principales,
 
 Una vez que tenemos la esctuctura de repositorios clonada es necesario obtener o crear los siguentes archivos:
 
-Dentro de la carpeta `sm-infraestructure` hay que crear un llave privada RSA256 con nombre `password`, en adelante esta llave sera utilizada para cifrar las variables de entorno por lo tanto no se encuentra en ningun otro lado que el servidor hasta que no se respalde.
+Dentro de la carpeta `sm-infrastructure` hay que crear un llave privada RSA256 con nombre `password`, en adelante esta llave sera utilizada para cifrar las variables de entorno por lo tanto no se encuentra en ningun otro lado que el servidor hasta que no se respalde.
 Esta llave nos permite crear por medio de `ansible-vault` un archivo con las variables secretas que necesitamos y lo cifra.
-Una vez que tenemos el archivo y estando parado dentro de `sm-infraestructure`, ejecutamos
+Una vez que tenemos el archivo y estando parado dentro de `sm-infrastructure`, ejecutamos
 
 ```bash
 make create_secrets
