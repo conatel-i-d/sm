@@ -15,7 +15,7 @@
 
 ## Descripción general
 
-La solución al cliente se basa en proveer un dashboard web para la administración de la red de switches.
+La presente solución se basa en proveer un dashboard web para la administración de la red de switches.
 En cuanto a la administración de switches, el proyecto permite listarlos mediante el switch manager y la base de datos (switches agregados de forma manual mediante el dashboard).
 Ademas permite interactuar con esta lista de switches usando dos roles
 
@@ -68,7 +68,7 @@ independientes:
    ambientes de producción y testing de la aplicación.
 4. `sm-playbooks`: Playbooks que consume el AWX para interactuar con los
    equipos de red de los clientes.
-5. `docs`: Carpeta que contiene imagenes y archivos Markdown con la docummentación
+5. `docs`: Carpeta que contiene imagenes y archivos Markdown con la documentación
 6. `Readme.md`: Archivo principal de documentación
 
 ## Descripción de la composición de hardware/contenedores y flujos de comunicación
@@ -77,6 +77,6 @@ independientes:
 
 ### Descripción de los flujos principales
 
-1. Autenticación: Cuando el usuario conecta a la URL del servidor de la aplicacción si estamos en dev se conecta al puerto 80, sino se redirige al puerto 443 y se negocian certificados, una vez establecida la comunicación, el servidor nginx devuelve la APP de React que automaticamente redirige a Keycloak donde se procede a la autenticacíon, si la autenticación se logra con exito, keycloak redirige nuevamente al dashboard react brinadnonos un json web token que nos servira para manetenr la sesion y cargar los roles del usuario. Una vez autenticado ya sea como administrador u operador ya se puede interactuar con la api.
-2. Lista switches: desde el dashboard se envia un request HTTP a la API REST para solicitar la lista de switches, los switches a listas pueden haber sido agregado de forma manual o extraidos del Cisco Prime, por lo tanto el backen hace una solicitud a la API del CISCO PRIME para listar los switches que están ahi y combina los que estaban en la base para agregarles algunas propiedades, ademas agrega de la base de datos los que fueron agregados manualmente.
-3. Administrar swithces: cada vez que se quiere administrar un switch (ya sea listar interfaces, buscar una mac o resetear una interface), el flujo es desde el dashboard solicitar a la API la acción a realizar sobre el switch o grupo de switches a operar, la api se conecta de forma asíncrona con el AWX (quien se encarga de la conexion a los switches y la automatización de los procesos con la infraestructura), el tower procesa la solicitud y luego devuelve la respuesta a la API, una vez que la API recibe todas las respuestas del AWX, procesa la respuesta para el dashboard y devuelve el request con los datos necesarios.
+1. Autenticación: Cuando el usuario conecta a la URL del servidor de la aplicacción si estamos en dev se conecta al puerto 80, sino se redirige al puerto 443 y se negocian certificados, una vez establecida la comunicación, el servidor nginx devuelve la APP de React que automáticamente redirige a Keycloak donde se procede a la autenticacíon, si la autenticación se logra con éxito, keycloak redirige nuevamente al dashboard react brindándonos un json web token que nos servirá para mantener la sesión y cargar los roles del usuario. Una vez autenticado ya sea como administrador u operador ya se puede interactuar con la api.
+2. Lista switches: desde el dashboard se envía un request HTTP a la API REST para solicitar la lista de switches, los switches a listas pueden haber sido agregado de forma manual o extraídos del Cisco Prime, por lo tanto el backend hace una solicitud a la API del CISCO PRIME para listar los switches que están ahi y combina los que estaban en la base para agregarles algunas propiedades, ademas agrega de la base de datos los que fueron agregados manualmente.
+3. Administrar switches: cada vez que se quiere administrar un switch (ya sea listar interfaces, buscar una mac o resetear una interface), el flujo es desde el dashboard solicitar a la API la acción a realizar sobre el switch o grupo de switches a operar, la api se conecta de forma asíncrona con el AWX (quien se encarga de la conexión a los switches y la automatización de los procesos con la infraestructura), el tower procesa la solicitud y luego devuelve la respuesta a la API, una vez que la API recibe todas las respuestas del AWX, procesa la respuesta para el dashboard y devuelve el request con los datos necesarios.
