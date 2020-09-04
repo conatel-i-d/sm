@@ -2,10 +2,10 @@
 
 Antes de comenzar con esta parte hay que asegurarse que el servidor cuenta con los requisitos y ademas el proyecto esta inicializado, tal como se describe en el [README](../README.md).
 
-Una vez en este estado, lo siguiente es restaurar todos los archivos de configuracion de variables de entorno, se debe colocar dentro de la carpeta `sm-infrastructure`
+Una vez en este estado, lo siguiente es restaurar todos los archivos de configuración de variables de entorno, se debe colocar dentro de la carpeta `sm-infrastructure`
 los archivos `password` y `secret.yml`
 
-Luego se iniziaiza el deploy ejecutando 
+Luego se inicia el deploy ejecutando
 
 ```bash
 make setup
@@ -18,6 +18,7 @@ Una vez hecho esto podemos levantar la db ejecutando
 ```bash
 make db_up
 ```
+
 Una vez que la db se levanto, debemos colocar el ultimo archivo de backup que tenemos en el servidor y con el comando
 
 ```bash

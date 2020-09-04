@@ -2,7 +2,7 @@
 
 En este punto entendemos se cuenta con todo el proyecto completo, la estructura de directorios esta formada y cuenta con los repos necesarios para inicializar el proyecto, explicado en el [documento principal](../README.md)
 
-## Infraestructura logica del proyecto
+## Infraestructura lógica del proyecto
 
 El proyecto cuenta inicialmente con tres estructuras principales,
 
@@ -15,7 +15,7 @@ El proyecto cuenta inicialmente con tres estructuras principales,
 
 ### Pasos para levantar ambientes
 
-Una vez que tenemos la esctuctura de repositorios clonada es necesario obtener o crear los siguentes archivos:
+Una vez que tenemos la estructura de repositorios clonada es necesario obtener o crear los siguientes archivos:
 
 Dentro de la carpeta `sm-infrastructure` hay que crear un llave privada RSA256 con nombre `password`, en adelante esta llave sera utilizada para cifrar las variables de entorno por lo tanto no se encuentra en ningun otro lado que el servidor hasta que no se respalde.
 Esta llave nos permite crear por medio de `ansible-vault` un archivo con las variables secretas que necesitamos y lo cifra.
@@ -25,7 +25,7 @@ Una vez que tenemos el archivo y estando parado dentro de `sm-infrastructure`, e
 make create_secrets
 ```
 
-para crear ese archivo secret.yml, este comando ademas de crear, abre el archivo para colocar las variables customizadas para este deploy del proyecto, las variables que se deben configurar para este proyecto son las siguientes:
+para crear ese archivo secret.yml. Este comando ademas de crear, abre el archivo para colocar las variables customizadas para este deploy del proyecto, las variables que se deben configurar para este proyecto son las siguientes:
 
 ```yml
 # Main vars
@@ -109,13 +109,13 @@ de levantar los servicios para esto ejecutamos los siguientes commandos
 make setup #crea la estructura de directorios y la red de docker
 make certs # solo si estamos en producción, crea los certificados para https
 make db_up # levanta la base de datos
-make dev # si estamos en dev - levanta todos los servicios en modo dev para poder
-# debuggear y modificar sin necesidad de recargar manual api ni dashboard
-make prod # si estamos en prod - previamente se debe haber compilado la version
+make dev # si estamos en dev - levanta todos los servicios en modo desarrollo para poder
+# debugear y modificar sin necesidad de recargar manual api ni dashboard
+make prod # si estamos en prod - previamente se deb<e haber compilado la version
 # de api y dashboard que se quiere iniciar.
 # <<<Proceso de compilación mas adelante>>>, necesario haber creado los certs
 make build-tower-cli # crea la imagen de el contenedor utilizado para enviar las configuraciones al awx
-make awx-send # envia las configuraciones al awx
+make awx-send # envía las configuraciones al awx
 ```
 
 ### DEPLOY DEV ENVIRONMENT

@@ -30,7 +30,7 @@ cd <docker_compose_dir>/proxy && docker-compose up -d --force-recreate && cd - #
 
 Para conectarse a el servidor de AWX es necesario acceder a la URL `https://<public_domain>/auth` observando la configuración de `public_domain`, una vez allí autenticarse con las credenciales definidad por las variables `keycloak_admin_username`, `keycloak_admin_password`.
 
-Luego para acceder a la configuración de usuario ir a la cuenta de usuario, esquina superior derecha, luego acceder a `Manage Account` y luego es posible cambiar las configuraciones que se muestran en las imagenes.
+Luego para acceder a la configuración de usuario ir a la cuenta de usuario, esquina superior derecha, luego acceder a `Manage Account` y luego es posible cambiar las configuraciones que se muestran en las imágenes.
 
 ![Acceder a ajustes de usuario](images/maintenance/2-KeycloakGoToUserSettings.png)
 

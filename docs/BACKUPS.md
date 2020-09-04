@@ -12,7 +12,7 @@ Si se hizo un deploy estandard de la solución, las variables de entorno se encu
 
 ## Respaldar archivos de configuración
 
-Todos los archivos de configuracion que son montados en contenedores y los certificados, asumiendo que se usaron rutas por defecto y se configuro correctamente la variable `project_folder`, son instalados en el directorio `sm-infrastructure/lib` por tanto esta es la carpeta que debería respaldarse.
+Todos los archivos de configuracion que y los certificados (asumiendo que la variables de entorno que configuran rutas relativas se usaron por defecto y que ademas se configuro correctamente la variable `project_folder`), son colocados en el directorio `sm-infrastructure/lib` por tanto esta es la carpeta que debería respaldarse.
 
 ## Respaldar bases de datos
 
