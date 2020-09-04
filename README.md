@@ -10,7 +10,7 @@
 - [Implementación desde 0](docs/FIRST_DEPLOY.md)
 - [Crear respaldos](docs/BACKUPS.md)
 - [Mantenimiento](docs/MAINTENANCE.md)
-- [Diagnostico de problemas](docs/TRUBLESHOOTING_TIPS.md)
+- [Diagnostico de problemas](docs/Troubleshooting_TIPS.md)
 - [Manual de usuario](docs/USER_MANUAL.md)
 
 ## Descripción general

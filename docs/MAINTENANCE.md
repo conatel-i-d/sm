@@ -49,7 +49,7 @@ Referencia para el cambio de datos del usuario en AWX
 
 ### Cambio de credenciales LDAP
 
-Para actualizar la configuración si se cambiaron o actualizaron las credenciales en el servidor ldap, lo que hay que hacer es acceder a `keycloak` como como se al comiendo de la [sección de cambio de password](###cambio-de-password-keycloak). Una vez ahí acceder a `User Federation`, en esa sección se verán los grupos de usuarios configurados para cargarse desde el ldap, cada grupo tiene su configuración independiente, por lo tanto si se cambiaron las credenciales habrá que cambiarlo en los tres grupos, en la [sección trubleshooting](./TRUBLESHOOTING_TIPS.md) se pueden ver algunas imágenes de como acceder y las configuraciónes posibles.
+Para actualizar la configuración si se cambiaron o actualizaron las credenciales en el servidor ldap, lo que hay que hacer es acceder a `keycloak` como como se al comiendo de la [sección de cambio de password](###cambio-de-password-keycloak). Una vez ahí acceder a `User Federation`, en esa sección se verán los grupos de usuarios configurados para cargarse desde el ldap, cada grupo tiene su configuración independiente, por lo tanto si se cambiaron las credenciales habrá que cambiarlo en los tres grupos, en la [sección Troubleshooting](./Troubleshooting_TIPS.md) se pueden ver algunas imágenes de como acceder y las configuraciónes posibles.
 
 ### Cambio de credenciales CISCO PRIME
 

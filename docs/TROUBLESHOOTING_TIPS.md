@@ -1,12 +1,12 @@
 # Diagnostico de fallas
 
-Para hacer trubleshooting es importante entender la estructura eexplicada en el [README principal](../README.md), una vez que se entienden los flujos para poder ver el estado general de los contenedores en la red docker se ejecuta
+Para hacer Troubleshooting es importante entender la estructura eexplicada en el [README principal](../README.md), una vez que se entienden los flujos para poder ver el estado general de los contenedores en la red docker se ejecuta
 
 ```bash
 docker ps
 ```
 
-![Docker ps](images/Trubleshooting/0-dockerPs.png)
+![Docker ps](images/Troubleshooting/0-dockerPs.png)
 
 en esa imagen se puede apreciar los nombres de los contenedores, el comando con el que inician, la imagen que utilizan para crearse y los puertos que cada contenedor trasladan desde la red interna docker al adaptador del host anfitrion, lo mismos representan `<ip_anfitrion>:<puerto_anfitrion> -> <puerto_contenedor>`, si aparece solo el puerto, el mismo esta expuesto por el contenedor pero solo en la red interna de docker, ademas se ve el estado de cada contenedos, si un contenedor falla lo representa en un log si la falla esta capturada, sino el mismo se resetea y esto lo podemos observar en el status de la vista general.
 
@@ -17,32 +17,32 @@ docker logs <nombre_del_contenedor>
 ```
 
 Ejemplo logs del Dashboard
-![Dashboard logs](images/Trubleshooting/1-dockerPs+dockerlogsDashboard.png)
+![Dashboard logs](images/Troubleshooting/1-dockerPs+dockerlogsDashboard.png)
 
 Ejemplo logs del Proxy
-![Proxy logs](images/Trubleshooting/2-dockerLogsNginx.png)
+![Proxy logs](images/Troubleshooting/2-dockerLogsNginx.png)
 
 Ejemplo logs de la API
-![API logs](images/Trubleshooting/3-dockerLogsApi.png)
+![API logs](images/Troubleshooting/3-dockerLogsApi.png)
 
 
 Ejemplo logs de Keycloak
-![Keycloak logs](images/Trubleshooting/4-dockerLogsKeycloak.png)
+![Keycloak logs](images/Troubleshooting/4-dockerLogsKeycloak.png)
 
 En estos últimos logs de error, podemos apreciar algunos errores.
 Por mas que el contenedor no se esta reiniciando ni dejo de funcionar (como se vio en la primer imagen de este documento), el mismo tiene fallas.
 No se reinicia ni deja de correr, porque como se explico antes estos errores fueron tratados por el software que se corre dentro del contenedor, que los capturo e imprimio en STDERR.
 Si analizamos un poco el log podemos ver que este error se da al no poder conectarse al servidor LDAP, esto debido a que saque la imagen de el keycloak corriendo en el entorno `DEV` en mi maquina local y no tenia acceso al  LDAP.
 
-Una vez que encontramos el error, si el error no fuera por el motivo que se acaba de explicar, se puede ir a la pagina de Keycloak y ver y corregir las las configuraciones de conexión con el LDAP. Para acceder a Keycloak ir al la `https://<public_domain>/auth` autenticarse y dentro de `user federation` acceder a el grupo que falla al conectarse, a continuacion algunas imagenes que muestra posibles configuraciones
+Una vez que encontramos el error, si el error no fuera por el motivo que se acaba de explicar, se puede ir a la pagina de Keycloak y ver y corregir las las configuraciones de conexión con el LDAP. Para acceder a Keycloak ir al la `https://<public_domain>/auth` autenticarse y dentro de `user federation` acceder a el grupo que falla al conectarse, a continuación algunas imagenes que muestra posibles configuraciones
 
-![Keycloak user federation](images/Trubleshooting/10-keycloakConfig.png)
+![Keycloak user federation](images/Troubleshooting/10-keycloakConfig.png)
 
-![keycloak config ldap connection](images/Trubleshooting/11-keycloakConfig.png)
+![keycloak config ldap connection](images/Troubleshooting/11-keycloakConfig.png)
 
-![keycloak config ldap user attributes](images/Trubleshooting/13-keycloakConfig.png)
+![keycloak config ldap user attributes](images/Troubleshooting/13-keycloakConfig.png)
 
-dentro de esta pagina al reconfigurar la conexión ya se puede ir chequeando paso a paso que todo funcione, nos permite verificar 
+dentro de esta pagina al reconfigurar la conexión ya se puede ir chequeando paso a paso que todo funcione, nos permite verificar
 
 1. La conexion con el servidor
 2. La autenticación con el servidor
@@ -52,16 +52,16 @@ Por ultimo otro diagnostico que puede ser interesante es verificar el funcionami
 
 En la siguiente imagen se ve la lista de tareas ejecutadas en mi servidor
 
-![AWX trubleshooting](images/Trubleshooting/16-AwxTrubleshooting.png)
+![AWX Troubleshooting](images/Troubleshooting/16-AwxTroubleshooting.png)
 
 luego al ingresar a una de reset por ejemplo
 
-![AWX trubleshooting](images/Trubleshooting/17-AwxTrubleshooting.png)
+![AWX Troubleshooting](images/Troubleshooting/17-AwxTroubleshooting.png)
 
 y dentro de esa de reset se ingresa a cada una de las dos task ejecutadas y a continuacion se muestra el comienzo de lo que se visualiza pero si se va bajando en el JSON se vera todos los logs que imprimio el equipo de destino al ejecutar el comando
 
-![AWX trubleshooting](images/Trubleshooting/18-AwxTrubleshooting.png)
+![AWX Troubleshooting](images/Troubleshooting/18-AwxTroubleshooting.png)
 
-![AWX trubleshooting](images/Trubleshooting/19-AwxTrubleshooting.png)
+![AWX Troubleshooting](images/Troubleshooting/19-AwxTroubleshooting.png)
 
 Por ultimo un diagnostico inicial y rapido de cualquier falla que pueda apreciarse al ejecutar una acción es dentro del dashboard acceder a los logs como se explica en el [manual de usuario](USER_MANUAL.md).
