@@ -142,3 +142,5 @@ Para bajar un ambiente completo es necesario ejecutar:
 make _db_down # baja la base de datos y borra el volumen # ¡¡¡DANGER!!! Borra todos los datos de la BDD.
 make tear_down # baja el resto de los servicios, borra los templates, borra la red docker
 ```
+
+[<img src="images/backToHome.png" width="150px" height="150px"/>](../README.md)

@@ -41,3 +41,5 @@ y a continuación se muestra como seria el flujo de busqueda de una MAC, hasta l
 ![Search by mac](images/UserManual/6-searchByMacSwitchOBuilding.png)
 
 ![Search by mac and reset flow](images/UserManual/7-findMacAndResetFlow.png)
+
+[<img src="images/backToHome.png" width="150px" height="150px"/>](../README.md)

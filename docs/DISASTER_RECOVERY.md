@@ -30,3 +30,5 @@ Por ultimo se procede a levantar el resto de los servicios
 ```bash
 make prod
 ```
+
+[<img src="images/backToHome.png" width="150px" height="150px"/>](../README.md)

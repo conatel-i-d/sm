@@ -73,3 +73,5 @@ cd <docker_compose_dir>/api && docker-compose up -d --force-recreate & cd - # Si
 
 Este procedimiento es Idem al [anterior](###-cambio-de-credenciales-cisco-prime), con la salvedad que las variables de entorno a cambiar son `prime_switches_ssh_pass` `prime_switches_ssh_user`, los comandos son los mismos luego de cambiar las variables.
 Para que el AWX tome el cambio de clave y se conecte a los switches con el nuevo user y pass a los switches puede demorar hasta 10 minutos.
+
+[<img src="images/backToHome.png" width="150px" height="150px"/>](../README.md)

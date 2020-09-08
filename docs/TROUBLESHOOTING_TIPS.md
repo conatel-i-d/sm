@@ -65,3 +65,5 @@ y dentro de esa de reset se ingresa a cada una de las dos task ejecutadas y a co
 ![AWX Troubleshooting](images/Troubleshooting/19-AwxTroubleshooting.png)
 
 Por ultimo un diagnostico inicial y rapido de cualquier falla que pueda apreciarse al ejecutar una acción es dentro del dashboard acceder a los logs como se explica en el [manual de usuario](USER_MANUAL.md).
+
+[<img src="images/backToHome.png" width="150px" height="150px"/>](../README.md)

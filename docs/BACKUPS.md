@@ -24,4 +24,4 @@ make db_backup
 
 una vez ejecutado, dentro de ese directorio se debe de haber creado un archivo con el nombre `db_dump_sw_manager_<datetime_de_generado>.sql` este es el archivo a respaldar para poder reconstruir la base.
 
-[<img src="images/backToHome.png" width="200px" height="200px"/>](../README.md)
+[<img src="images/backToHome.png" width="150px" height="150px"/>](../README.md)
